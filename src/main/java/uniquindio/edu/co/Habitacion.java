@@ -3,25 +3,25 @@ package uniquindio.edu.co;
 public class Habitacion {
 
     /**
-     *
      * Atributos de la clase Habitacion
      */
-
     private int numHabitacion, piso, capacidad;
     private String tipo;
     private double precioNoche;
-    private boolean disponible;
+    private String estado;
 
     /**
-     * Metodo constructor de la clase Habitaci'on
+     * Metodo constructor de la clase Habitacion
      */
-    public Habitacion(int numHabitacion, int piso, String tipo, int capacidad, double precioNoche) {
+    public Habitacion(int numHabitacion, int piso, String tipo,
+                      int capacidad, double precioNoche) {
+
         this.numHabitacion = numHabitacion;
         this.piso = piso;
         this.tipo = tipo;
         this.capacidad = capacidad;
         this.precioNoche = precioNoche;
-        this.disponible = true;
+        this.estado = "Disponible";
     }
 
     public int getNumHabitacion() {
@@ -64,12 +64,16 @@ public class Habitacion {
         this.precioNoche = precioNoche;
     }
 
-    public boolean isDisponible() {
-        return disponible;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public boolean isDisponible() {
+        return estado.equalsIgnoreCase("Disponible");
     }
 
     @Override
@@ -80,7 +84,7 @@ public class Habitacion {
                 ", tipo='" + tipo + '\'' +
                 ", capacidad=" + capacidad +
                 ", precioNoche=" + precioNoche +
-                ", disponible=" + disponible +
+                ", estado='" + estado + '\'' +
                 '}';
     }
 }
