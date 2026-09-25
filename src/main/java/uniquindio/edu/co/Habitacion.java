@@ -13,7 +13,7 @@ public class Habitacion {
     private boolean disponible;
 
     /**
-     * Metodo constructor de la clase Habitacion
+     * Metodo constructor de la clase Habitaci'on
      */
     public Habitacion(int numHabitacion, int piso, String tipo, int capacidad, double precioNoche) {
         this.numHabitacion = numHabitacion;
