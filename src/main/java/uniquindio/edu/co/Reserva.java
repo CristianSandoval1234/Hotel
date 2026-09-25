@@ -9,7 +9,7 @@ public class Reserva {
     /**
      *
      * Atributos de la clase Reserva
-      */
+     */
 
     private String codigoReserva, fechaRealizacion, fechaEntrada, fechaSalida, estado, metodoPago;
     private double valorTotal;
