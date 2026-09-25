@@ -5,7 +5,7 @@ public class Habitacion {
     /**
      *
      * Atributos de la clase Habitacion
-      */
+     */
 
     private int numHabitacion, piso, capacidad;
     private String tipo;

@@ -5,19 +5,17 @@ import java.util.List;
 
 public class Reserva {
 
-
     /**
-     *
      * Atributos de la clase Reserva
      */
+    private String codigoReserva, fechaRealizacion, fechaEntrada,
+            fechaSalida, estado, metodoPago;
 
-    private String codigoReserva, fechaRealizacion, fechaEntrada, fechaSalida, estado, metodoPago;
-    private double valorTotal;
+    private double valorTotal, descuento;
+
     /**
-     *
-     * Relaciones de la clase Reserva (Asociaciones explícitas del diagrama)
+     * Relaciones de la clase Reserva
      */
-
     private Huesped huesped;
     private List<Habitacion> listHabitacionesReservadas;
     private List<ServicioAdicional> listConsumos;
@@ -25,14 +23,17 @@ public class Reserva {
     /**
      * Metodo constructor de la clase Reserva
      */
-    public Reserva(String codigoReserva, String fechaRealizacion, String fechaEntrada, String fechaSalida, String metodoPago, Huesped huesped) {
+    public Reserva(String codigoReserva, String fechaRealizacion,
+                   String fechaEntrada, String fechaSalida,
+                   String metodoPago, double descuento, Huesped huesped) {
+
         this.codigoReserva = codigoReserva;
         this.fechaRealizacion = fechaRealizacion;
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
         this.estado = "Pendiente";
         this.metodoPago = metodoPago;
-        this.valorTotal = 0.0;
+        this.descuento = descuento;
         this.huesped = huesped;
 
         this.listHabitacionesReservadas = new ArrayList<>();
@@ -47,12 +48,28 @@ public class Reserva {
         return fechaRealizacion;
     }
 
+    public String getFechaEntrada() {
+        return fechaEntrada;
+    }
+
+    public String getFechaSalida() {
+        return fechaSalida;
+    }
+
+    public String getMetodoPago() {
+        return metodoPago;
+    }
+
     public double getValorTotal() {
         return valorTotal;
     }
 
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
+    }
+
+    public double getDescuento() {
+        return descuento;
     }
 
     public String getEstado() {
@@ -86,5 +103,4 @@ public class Reserva {
                 ", habitaciones=" + listHabitacionesReservadas.size() +
                 '}';
     }
-
 }
